@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+@import "variable";
+@import "basic/mixin";
+@import "basic/selector";
+@import "basic/reset";
+@import "basic/default";
+@import "basic/grid";
+@import "header";
+@import "footer";
+
+//===========================================================
+// Pages
+//===========================================================
+@import "page-top";
+
+/*==================================================================================================
+	サイト基礎
+==================================================================================================*/
+body {
+  color: $color-black;
+  font-weight: 500;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-family: $font-default;
+  @include font-size(16);
+
+  @include max-screen($screen-tb) {
+    @include font-size(14);
+  }
+
+  @include max-screen($screen-sm) {
+    @include font-size(12);
+  }
+}
+.mContainer {
+  padding-top: 7rem;
+  @include max-screen($screen-tb) {
+    padding-top: 5rem;
+  }
+  @include max-screen($screen-sm) {
+    padding-top: 3rem;
+  }
+  &:first-child {
+    padding-top: 0;
+  }
+}
+.inner {
+  max-width: $width-inner;
+  @include inner();
+  margin: 0 auto;
+}
